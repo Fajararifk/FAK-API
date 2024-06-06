@@ -1,0 +1,5 @@
+Mengganti appsettings.json sesuai dengan SSMS masing-masing dan ubah nama database
+Buka Package Manager Console
+	Lalu pilih Default Project Persistance
+		Add-Migration "Kata-kata untuk add database"
+		Update-Databse
