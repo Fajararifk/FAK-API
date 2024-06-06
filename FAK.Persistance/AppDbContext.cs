@@ -18,7 +18,7 @@ namespace FAK.Persistance
         public DbSet<Desa> Desa { get; set; }
         public DbSet<TPS> TPS { get; set; }
         public DbSet<HasilPemiluTPS> HasilPemiluTPS { get; set; }
-        //public DbSet<HasilPemiluTPS> HasilPemiluTPS { get; set; }
+        public DbSet<MasterSystemConfig> MasterSystemConfig { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,6 +36,7 @@ namespace FAK.Persistance
               .ValueGeneratedOnAdd();
             modelBuilder.Entity<HasilPemiluTPS>().Property(p => p.IdHasil)
               .ValueGeneratedOnAdd();
+            modelBuilder.Entity<MasterSystemConfig>();
 
 
             modelBuilder.Entity<HasilPemiluTPS>().HasKey(p => p.IdHasil);

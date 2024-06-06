@@ -18,6 +18,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using FAK.Infrastructure.Services;
+using FAK.Infrastructure.Interface;
+using FAK.Infrastructure.Repository;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -146,6 +148,7 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 });
 builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection("JWTConfig"));
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<FAK.Infrastructure.Services.IEmailSender, EmailSender>();
 //builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
 //builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
