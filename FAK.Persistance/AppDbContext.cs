@@ -19,6 +19,14 @@ namespace FAK.Persistance
         public DbSet<TPS> TPS { get; set; }
         public DbSet<HasilPemiluTPS> HasilPemiluTPS { get; set; }
         public DbSet<MasterSystemConfig> MasterSystemConfig { get; set; }
+        public DbSet<Patient> Patient { get; set; }
+        public DbSet<Doctor> Doctor { get; set; }
+        public DbSet<Appointment> Appointment { get; set; }
+        public DbSet<MedicalRecord> MedicalRecord { get; set; }
+        public DbSet<Message> Message { get; set; }
+        public DbSet<Staff> Staff { get; set; }
+        public DbSet<Payment> Payment { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
