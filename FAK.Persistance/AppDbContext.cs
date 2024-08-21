@@ -19,13 +19,13 @@ namespace FAK.Persistance
         public DbSet<TPS> TPS { get; set; }
         public DbSet<HasilPemiluTPS> HasilPemiluTPS { get; set; }
         public DbSet<MasterSystemConfig> MasterSystemConfig { get; set; }
-        public DbSet<Patient> Patient { get; set; }
-        public DbSet<Doctor> Doctor { get; set; }
-        public DbSet<Appointment> Appointment { get; set; }
-        public DbSet<MedicalRecord> MedicalRecord { get; set; }
-        public DbSet<Message> Message { get; set; }
-        public DbSet<Staff> Staff { get; set; }
-        public DbSet<Payment> Payment { get; set; }
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<MedicalRecord> MedicalRecords { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<Staff> Staffs { get; set; }
+        public DbSet<Payment> Payments { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -45,6 +45,13 @@ namespace FAK.Persistance
             modelBuilder.Entity<HasilPemiluTPS>().Property(p => p.IdHasil)
               .ValueGeneratedOnAdd();
             modelBuilder.Entity<MasterSystemConfig>();
+            modelBuilder.Entity<Patient>();
+            modelBuilder.Entity<Doctor>();
+            modelBuilder.Entity<Appointment>();
+            modelBuilder.Entity<MedicalRecord>();
+            modelBuilder.Entity<Message>();
+            modelBuilder.Entity<Staff>();
+            modelBuilder.Entity<Payment>();
 
 
             modelBuilder.Entity<HasilPemiluTPS>().HasKey(p => p.IdHasil);
