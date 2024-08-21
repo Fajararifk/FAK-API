@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FAK.Domain.Entities
 {
-    public partial class MasterSystemConfig : BaseEntity////
+    public partial class MasterSystemConfig : BaseEntity//////
     {
         public string Name { get; set; }
 
